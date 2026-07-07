@@ -1,0 +1,58 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  z-index: 100;
+}
+
+.topbar__logo {
+  display: flex;
+  align-items: center;
+  height: var(--tap-target);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.topbar__logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.topbar__search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  color: var(--color-primary);
+  border-radius: 4px;
+  transition: background-color var(--transition);
+}
+
+.topbar__search-btn:hover {
+  background-color: var(--color-surface);
+}
+
+/* Add spacing to content below topbar */
+.layout__content {
+  padding-top: 56px;
+}
+
+/* Desktop: Topbar only visible above sidebar */
+@media (min-width: 768px) {
+  .topbar {
+    left: 240px; /* Offset by sidebar width */
+  }
+}

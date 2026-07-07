@@ -1,0 +1,114 @@
+.profile {
+  background: var(--color-bg);
+  min-height: 100%;
+  padding: var(--spacing-md);
+}
+
+.profile__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.profile__name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.profile__email {
+  font-size: 14px;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.profile__section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.7;
+}
+
+.profile__menu {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile__menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  font-size: 15px;
+  color: var(--color-primary);
+  transition: background-color var(--transition);
+  min-height: var(--tap-target);
+}
+
+.profile__menu-item:last-child {
+  border-bottom: none;
+}
+
+.profile__menu-item:hover {
+  background-color: var(--color-bg);
+}
+
+.profile__logout {
+  width: 100%;
+  padding: 16px;
+  background: var(--color-surface);
+  color: #c53030;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: var(--tap-target);
+  transition: background-color var(--transition);
+}
+
+.profile__logout:hover {
+  background-color: #fee;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    padding: var(--spacing-xl);
+  }
+}

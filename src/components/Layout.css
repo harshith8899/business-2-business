@@ -1,0 +1,25 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.layout__content {
+  flex: 1;
+  padding-bottom: 72px; /* Space for bottom nav */
+  overflow-y: auto;
+}
+
+/* Desktop: Transform to sidebar layout */
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  .layout__content {
+    flex: 1;
+    padding-bottom: 0;
+    margin-left: 240px; /* Space for sidebar */
+  }
+}

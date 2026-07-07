@@ -1,0 +1,133 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+}
+
+.auth-page__container {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-page__header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.auth-page__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.auth-page__subtitle {
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.auth-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.auth-page__error {
+  padding: var(--spacing-md);
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c33;
+  font-size: 14px;
+}
+
+.auth-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.auth-page__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.auth-page__input {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.auth-page__submit {
+  background: var(--color-accent);
+  color: white;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: var(--tap-target);
+  transition: opacity var(--transition);
+}
+
+.auth-page__submit:hover {
+  opacity: 0.9;
+}
+
+.auth-page__footer {
+  text-align: center;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.auth-page__footer-text {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.auth-page__link {
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-page__demo {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  border-radius: 4px;
+}
+
+.auth-page__demo-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.auth-page__demo-text {
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 4px 0;
+}
+
+.auth-page__demo-text code {
+  font-family: var(--font-mono);
+  background: var(--color-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+}
