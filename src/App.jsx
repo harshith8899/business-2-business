@@ -11,6 +11,7 @@ import Enquiries from './pages/Enquiries'
 import Profile from './pages/Profile'
 import Admin from './pages/Admin'
 import ListingDetail from './pages/ListingDetail'
+import InstallButton from './components/InstallButton'
 import './App.css'
 
 function PrivateRoute({ children }) {
@@ -27,6 +28,7 @@ function App() {
   return (
     <AuthProvider>
       <HashRouter>
+        <InstallButton />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
