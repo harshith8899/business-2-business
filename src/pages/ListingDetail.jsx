@@ -115,6 +115,9 @@ function ListingDetail() {
         <div className="listing-detail__header">
           <div>
             <span className="listing-detail__badge">{listing.listing_types?.name || 'Item'}</span>
+            <span className={`listing-detail__mode-badge listing-detail__mode-badge--${listing.listing_mode}`}>
+              {listing.listing_mode === 'sell' ? '💰 For Sale' : '🔍 Wanted'}
+            </span>
             <h1 className="listing-detail__title">{listing.title}</h1>
             <p className="listing-detail__location">{listing.location || 'Location not specified'}</p>
           </div>

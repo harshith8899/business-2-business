@@ -7,17 +7,59 @@
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
-  top: 56px;
+  top: 0; /* Changed from 56px to 0 since layout__content already has padding-top: 56px */
   z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Add shadow for better separation */
+}
+
+/* Mode Filter Styles */
+.browse__mode-filter {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: var(--color-bg); /* Ensure solid background */
+}
+
+.browse__mode-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.browse__mode {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: all var(--transition);
+  min-height: 40px;
+}
+
+.browse__mode:hover {
+  border-color: var(--color-accent);
+}
+
+.browse__mode--active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
 }
 
 .browse__categories {
   display: flex;
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
+  padding-top: var(--spacing-sm);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  background: var(--color-bg); /* Ensure solid background */
 }
 
 .browse__categories::-webkit-scrollbar {
@@ -58,6 +100,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
+  margin-top: 48px; /* Add space between header and first card */
 }
 
 .listing-card {
@@ -97,6 +140,27 @@
   font-size: 12px;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.listing-card__mode-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.listing-card__mode-badge--sell {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.listing-card__mode-badge--buy {
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
 }
 
 .listing-card__content {

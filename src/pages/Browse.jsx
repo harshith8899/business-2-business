@@ -9,6 +9,7 @@ function Browse() {
   const [searchParams] = useSearchParams()
   const [listingTypes, setListingTypes] = useState([])
   const [activeTypeId, setActiveTypeId] = useState(null)
+  const [activeMode, setActiveMode] = useState(null) // null = all, 'sell', 'buy'
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -20,7 +21,7 @@ function Browse() {
 
   useEffect(() => {
     loadListings()
-  }, [activeTypeId])
+  }, [activeTypeId, activeMode])
 
   const loadListingTypes = async () => {
     try {
@@ -38,6 +39,7 @@ function Browse() {
     try {
       const { data } = await getListings({
         type: activeTypeId,
+        listingMode: activeMode, // Add listing mode filter
         limit: 50,
         excludeUserId: user?.id // Exclude current user's listings
       })
@@ -62,6 +64,28 @@ function Browse() {
   return (
     <div className="browse">
       <div className="browse__header">
+        {/* Listing Mode Filter */}
+        <div className="browse__mode-filter">
+          <button
+            className={`browse__mode ${activeMode === null ? 'browse__mode--active' : ''}`}
+            onClick={() => setActiveMode(null)}
+          >
+            All Listings
+          </button>
+          <button
+            className={`browse__mode ${activeMode === 'sell' ? 'browse__mode--active' : ''}`}
+            onClick={() => setActiveMode('sell')}
+          >
+            💰 For Sale
+          </button>
+          <button
+            className={`browse__mode ${activeMode === 'buy' ? 'browse__mode--active' : ''}`}
+            onClick={() => setActiveMode('buy')}
+          >
+            🔍 Wanted
+          </button>
+        </div>
+
         <div className="browse__categories">
           <button
             className={`browse__category ${activeTypeId === null ? 'browse__category--active' : ''}`}
@@ -119,6 +143,9 @@ function Browse() {
                   </div>
                   <span className="listing-card__badge">
                     {listing.listing_types?.name || 'Item'}
+                  </span>
+                  <span className={`listing-card__mode-badge listing-card__mode-badge--${listing.listing_mode}`}>
+                    {listing.listing_mode === 'sell' ? '💰 Selling' : '🔍 Buying'}
                   </span>
                 </div>
                 <div className="listing-card__content">

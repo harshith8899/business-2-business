@@ -12,6 +12,7 @@ function Post() {
   const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     listing_type_id: '',
+    listing_mode: 'sell', // Default to 'sell'
     title: '',
     description: '',
     price: '',
@@ -48,6 +49,7 @@ function Post() {
       const listingData = {
         user_id: user.id,
         listing_type_id: parseInt(formData.listing_type_id),
+        listing_mode: formData.listing_mode, // Add listing_mode
         title: formData.title,
         description: formData.description,
         price: formData.price ? parseFloat(formData.price) : null,
@@ -106,6 +108,29 @@ function Post() {
         )}
 
         <form onSubmit={handleSubmit} className="post__form">
+          {/* Listing Mode Toggle */}
+          <div className="post__field">
+            <label className="post__label">I want to *</label>
+            <div className="post__mode-toggle">
+              <button
+                type="button"
+                className={`post__mode-btn ${formData.listing_mode === 'sell' ? 'post__mode-btn--active' : ''}`}
+                onClick={() => setFormData({ ...formData, listing_mode: 'sell' })}
+              >
+                <span className="post__mode-icon">💰</span>
+                <span>Sell / Offer</span>
+              </button>
+              <button
+                type="button"
+                className={`post__mode-btn ${formData.listing_mode === 'buy' ? 'post__mode-btn--active' : ''}`}
+                onClick={() => setFormData({ ...formData, listing_mode: 'buy' })}
+              >
+                <span className="post__mode-icon">🔍</span>
+                <span>Buy / Request</span>
+              </button>
+            </div>
+          </div>
+
           <div className="post__field">
             <label htmlFor="listing_type_id" className="post__label">Type *</label>
             <select

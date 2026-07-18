@@ -101,6 +101,7 @@ CREATE TABLE listings (
   created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   expires_at      TIMESTAMP,
+  listing_mode    text NOT NULL, -- condition 'sell' or 'buy' only
   
   -- Job-specific fields
   job_type        VARCHAR(50), -- e.g., 'full-time', 'contract', 'freelance'

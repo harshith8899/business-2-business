@@ -148,9 +148,14 @@ function Dashboard() {
                         style={{ cursor: 'pointer' }}
                       >
                         <h3 className="listing-item__title">{listing.title}</h3>
-                        <span className={`listing-item__status listing-item__status--${listing.status}`}>
-                          {listing.status}
-                        </span>
+                        <div className="listing-item__badges">
+                          <span className={`listing-item__mode listing-item__mode--${listing.listing_mode}`}>
+                            {listing.listing_mode === 'sell' ? '💰' : '🔍'} {listing.listing_mode === 'sell' ? 'Selling' : 'Buying'}
+                          </span>
+                          <span className={`listing-item__status listing-item__status--${listing.status}`}>
+                            {listing.status}
+                          </span>
+                        </div>
                       </div>
                       <div className="listing-item__stats">
                         <span className="listing-item__stat">{listing.views_count || 0} views</span>

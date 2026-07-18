@@ -89,8 +89,8 @@
 
 .listing-item__main {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -98,6 +98,29 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.listing-item__badges {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.listing-item__mode {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.listing-item__mode--sell {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.listing-item__mode--buy {
+  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
 }
 
 .listing-item__status {
