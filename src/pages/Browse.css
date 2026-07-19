@@ -85,6 +85,51 @@
   border-color: var(--color-accent);
 }
 
+/* Sub-category Filter Styles */
+.browse__subcategories {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  padding-top: 0;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: var(--color-bg);
+}
+
+.browse__subcategories::-webkit-scrollbar {
+  display: none;
+}
+
+.browse__subcategory-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  opacity: 0.7;
+  white-space: nowrap;
+  margin-right: var(--spacing-xs);
+}
+
+.browse__subcategory {
+  padding: 6px var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: all var(--transition);
+  min-height: 32px;
+}
+
+.browse__subcategory--active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
 .browse__content {
   padding: var(--spacing-md);
 }
@@ -160,6 +205,38 @@
 
 .listing-card__mode-badge--buy {
   background: rgba(59, 130, 246, 0.9);
+  color: white;
+}
+
+.listing-card__sub-badge {
+  position: absolute;
+  bottom: var(--spacing-sm);
+  left: var(--spacing-sm);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  text-transform: capitalize;
+}
+
+.listing-card__sub-badge--condition {
+  background: rgba(168, 85, 247, 0.9);
+  color: white;
+}
+
+.listing-card__sub-badge--urgency {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+}
+
+.listing-card__sub-badge--job-type {
+  background: rgba(251, 146, 60, 0.9);
+  color: white;
+}
+
+.listing-card__sub-badge--rental-period {
+  background: rgba(14, 165, 233, 0.9);
   color: white;
 }
 
